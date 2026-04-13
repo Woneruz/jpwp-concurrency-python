@@ -1,1 +1,1 @@
-# Quiz - pytania robocze
+# Quiz - pytania
