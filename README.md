@@ -32,7 +32,20 @@ Repozytorium do projektu z przedmiotu JPWP poświęconego współbieżności i w
 
 ## Prezentacja
 
-Prezentacja w formacie PDF zostanie dodana po zatwierdzeniu.
+[Wspolbieznosc_Prezentacja.pdf](Wspolbieznosc_Prezentacja.pdf)
+
+Prezentacja liczy 27 slajdów i obejmuje następujące zagadnienia:
+
+| # | Temat | Opis |
+|---|---|---|
+| 01 | **Współbieżność vs równoległość** | różnica między naprzemiennym wykonaniem a prawdziwą równoległością |
+| 02 | **Wątki, procesy i GIL** | ograniczenia CPython; kiedy wątki pomagają, a kiedy nie |
+| 03 | **Tworzenie wątków i ich cykl życia** | `threading.Thread`, stany wątku NEW -> RUNNING -> TERMINATED |
+| 04 | **Race condition i synchronizacja** | problem wyścigu, `threading.Lock`, sekcja krytyczna |
+| 05 | **Komunikacja przez Queue** | wzorzec producer-consumer, graceful shutdown |
+| 06 | **Deadlock i antypatterns** | przyczyny zakleszczenia, naprawa i 5 typowych błędów |
+| 07 | **ThreadPoolExecutor** | `concurrent.futures`, obiekt `Future`, `submit()`, `map()` |
+| 08 | **Case study i benchmarki** | serwer TCP, porównanie wątki vs procesy vs sekwencyjnie |
 
 ---
 
