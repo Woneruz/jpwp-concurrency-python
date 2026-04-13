@@ -1,22 +1,12 @@
 """
 Zadanie 2: Synchronizacja dostepu do wspolnej listy
-
-Opis problemu:
 Kilka watkow zapisuje komunikaty do tej samej listy. Dodatkowo program zlicza,
 ile komunikatow zostalo dodanych. Lista i licznik powinny byc zmieniane jako
 jedna sekcja krytyczna.
-
-Cel:
-Uzupelnij kod tak, aby kazdy zapis do wspolnych danych byl chroniony przez
-threading.Lock.
-
+Uzupelnij kod tak, aby kazdy zapis do wspolnych danych byl chroniony przez threading.Lock.
 Oczekiwany efekt:
 Program wypisuje liczbe komunikatow rowna EXPECTED_MESSAGES i nie gubi zadnych
 zapisow.
-
-Wskazowka:
-Ten sam lock powinien zabezpieczac zarowno dodanie elementu do listy, jak i
-zwiekszenie licznika zapisow.
 """
 
 import threading
@@ -29,7 +19,7 @@ EXPECTED_MESSAGES = THREAD_COUNT * MESSAGES_PER_THREAD
 
 messages: list[str] = []
 saved_messages = 0
-# TODO: Utworz lock dla wspolnych danych messages i saved_messages.
+# Do zrobienia: Utworz lock dla wspolnych danych messages i saved_messages.
 
 
 def save_messages(worker_id: int) -> None:
@@ -39,7 +29,7 @@ def save_messages(worker_id: int) -> None:
         time.sleep(0.05)
         message = f"Worker {worker_id}: komunikat {message_number}"
 
-        # TODO: Zabezpiecz ponizsze dwie operacje jedna blokada.
+        # Do zrobienia: Zabezpiecz ponizsze dwie operacje jedna blokada.
         messages.append(message)
         saved_messages += 1
 
