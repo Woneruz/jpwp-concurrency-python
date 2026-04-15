@@ -26,7 +26,10 @@ def worker(worker_id: int) -> None:
     while True:
         task = task_queue.get()
 
-        #Do zrobienia: Jesli task to STOP_SIGNAL, oznacz zadanie jako wykonane i wyjdz z petli.
+        if task is STOP_SIGNAL:
+            task_queue.task_done()
+            print(f"Worker {worker_id} koncze prace")
+            break
 
         print(f"Worker {worker_id} przetwarza zadanie {task}")
         time.sleep(0.1)
@@ -45,8 +48,12 @@ def main() -> None:
     for task_id in range(1, TASK_COUNT + 1):
         task_queue.put(task_id)
 
-    #Do zrobienia: Dodaj STOP_SIGNAL do kolejki odpowiednia liczbe razy.
-    #Do zrobienia: Poczekaj na oproznienie kolejki.
+    # Sygnaly konca - po jednym dla kazdego workera
+    for _ in range(WORKER_COUNT):
+        task_queue.put(STOP_SIGNAL)
+
+    # Czekamy az kolejka opustoszeje
+    task_queue.join()
 
     for thread in workers:
         thread.join()

@@ -20,7 +20,7 @@ task_queue: queue.Queue[int] = queue.Queue()
 
 def producer() -> None:
     for task_id in range(1, TASK_COUNT + 1):
-        #Do zrobienia: Dodaj task_id do task_queue.
+        task_queue.put(task_id)
         print(f"Producent utworzyl zadanie {task_id}")
         time.sleep(0.05)
 
@@ -29,12 +29,11 @@ def consumer() -> None:
     processed = 0
 
     while processed < TASK_COUNT:
-        #Do zrobienia: Pobierz zadanie z task_queue.
-        task_id = 0
+        task_id = task_queue.get()
         print(f"Konsument przetwarza zadanie {task_id}")
         time.sleep(0.1)
         processed += 1
-        #Do zrobienia: Oznacz zadanie jako zakonczone.
+        task_queue.task_done()
 
 
 def main() -> None:
@@ -45,7 +44,7 @@ def main() -> None:
     producer_thread.start()
 
     producer_thread.join()
-    #Do zrobienia: Poczekaj az kolejka zostanie oprozniona.
+    task_queue.join()
     consumer_thread.join()
 
     print("Wszystkie zadania zostaly przetworzone.")

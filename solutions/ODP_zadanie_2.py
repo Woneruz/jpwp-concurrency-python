@@ -19,7 +19,7 @@ EXPECTED_MESSAGES = THREAD_COUNT * MESSAGES_PER_THREAD
 
 messages: list[str] = []
 saved_messages = 0
-# Do zrobienia: Utworz lock dla wspolnych danych messages i saved_messages.
+lock = threading.Lock()
 
 
 def save_messages(worker_id: int) -> None:
@@ -29,9 +29,9 @@ def save_messages(worker_id: int) -> None:
         time.sleep(0.05)
         message = f"Worker {worker_id}: komunikat {message_number}"
 
-        # Do zrobienia: Zabezpiecz ponizsze dwie operacje jedna blokada.
-        messages.append(message)
-        saved_messages += 1
+        with lock:
+            messages.append(message)
+            saved_messages += 1
 
 
 def main() -> None:

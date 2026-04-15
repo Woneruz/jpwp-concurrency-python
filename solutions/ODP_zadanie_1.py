@@ -17,17 +17,17 @@ INCREMENTS_PER_THREAD = 1000
 EXPECTED_TOTAL = THREAD_COUNT * INCREMENTS_PER_THREAD
 
 counter = 0
-#Do zrobienia: Utworz blokade, ktora zabezpieczy dostep do counter.
+lock = threading.Lock()
 
 
 def increment_counter() -> None:
     global counter
 
     for _ in range(INCREMENTS_PER_THREAD):
-        current_value = counter
-        time.sleep(0.0001)
-        counter = current_value + 1
-        #Do zrobienia: Przenies sekcje krytyczna pod blokade.
+        with lock:
+            current_value = counter
+            time.sleep(0.0001)
+            counter = current_value + 1
 
 
 def main() -> None:
