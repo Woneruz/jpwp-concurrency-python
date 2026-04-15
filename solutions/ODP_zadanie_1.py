@@ -9,6 +9,12 @@ Oczekiwany efekt:
 Program wypisuje wartosc licznika rowna EXPECTED_TOTAL.
 """
 
+
+# slajd 7 (Race condition - problem wyscigu, counter += 1 nie jest atomowa)
+# slajd 8 (Naprawa race condition - z Lockiem)
+# slajd 10 (with lock - sekcja krytyczna, tylko 1 watek naraz)
+
+
 import threading
 import time
 

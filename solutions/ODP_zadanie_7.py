@@ -8,6 +8,14 @@ Program przetwarza liste danych wejsciowych rownolegle, zbiera wyniki i
 wypisuje je po zakonczeniu pracy.
 """
 
+
+# slajd 4 (watki idealne dla zadan I/O-bound - GIL zwalniany)
+# slajd 17 (ThreadPoolExecutor - with automatycznie uruchamia i konczy watki)
+# slajd 17 (max_workers - ograniczenie rownoleglosci)
+# slajd 17 (executor.map - wygodna dla listy zadan tego samego typu)
+# slajd 21 (benchmark - watki przyspieszaja I/O ~10x vs sekwencyjnie)
+
+
 import time
 from concurrent.futures import ThreadPoolExecutor
 

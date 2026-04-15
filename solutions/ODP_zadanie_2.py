@@ -9,6 +9,12 @@ Program wypisuje liczbe komunikatow rowna EXPECTED_MESSAGES i nie gubi zadnych
 zapisow.
 """
 
+
+# slajd 11 (Chron powiazane zmienne razem - jeden lock dla wielu operacji)
+# slajd 10 (minimalna sekcja krytyczna - I/O poza lockiem)
+# slajd 11 (oba zapisy to JEDNA sekcja krytyczna - lista + licznik)
+
+
 import threading
 import time
 

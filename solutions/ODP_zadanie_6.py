@@ -8,6 +8,13 @@ Oczekiwany efekt:
 W wersji poprawionej oba watki koncza prace i program wraca do terminala.
 """
 
+
+# slajd 15 (deadlock - dwa watki, locki w przeciwnej kolejnosci)
+# slajd 15 (jak unikac: stala kolejnosc, timeout, mniej blokad, Queue)
+# slajd 16 (Recepta - ustal globalny porzadek lock_a -> lock_b)
+# slajd 16 (kazdy watek bierze locki w tej samej kolejnosci - cykl niemozliwy)
+
+
 import threading
 import time
 

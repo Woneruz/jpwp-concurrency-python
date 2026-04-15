@@ -8,6 +8,14 @@ przetwarza je przez co najmniej 3 watki
 robocze i konczy prace bez zawieszenia.
 """
 
+
+# slajd 13 (graceful shutdown - sygnal konca None)
+# slajd 14 (tyle None ile workerow - kazdy odbierze swoj sygnal)
+# slajd 14 (consumer wykrywa None i wychodzi z petli)
+# slajd 14 (brak daemon=True - workery koncza czysto)
+# slajd 14 (q.join w main - czeka az kolejka opustoszeje)
+
+
 import queue
 import threading
 import time

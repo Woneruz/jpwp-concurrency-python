@@ -9,6 +9,13 @@ Program wypisuje przetworzenie zadan od 1 do TASK_COUNT i konczy prace bez
 zawieszenia.
 """
 
+
+# slajd 12 (API Queue - put dodaje element)
+# slajd 12 (API Queue - get pobiera element, blokuje gdy pusta)
+# slajd 12 (task_done - sygnalizuje koniec zadania)
+# slajd 12 (q.join - czeka az kolejka opustoszeje)
+
+
 import queue
 import threading
 import time

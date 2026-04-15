@@ -10,6 +10,13 @@ Program przetwarza wszystkie zadania, wypisuje komunikaty o zakonczeniu pracy
 workerow i wraca do terminala.
 """
 
+
+# slajd 13 (graceful shutdown - sygnal konca)
+# slajd 14 (consumer wykrywa None - task_done + break)
+# slajd 14 (tyle None ile workerow)
+# slajd 14 (q.join w main)
+
+
 import queue
 import threading
 import time
