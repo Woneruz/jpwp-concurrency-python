@@ -11,22 +11,8 @@ Repozytorium do projektu z przedmiotu JPWP poświęconego współbieżności i w
 | Katalog | Opis |
 |---|---|
 | `zadania/` | 7 zadań praktycznych do samodzielnego uzupełnienia |
-| `solutions/` | Rozwiązania zadań (TBA) |
-| `quiz/` | Pytania teoretyczne sprawdzające zrozumienie tematu |
-
----
-
-## Zadania
-
-| # | Plik | Temat |
-|---|---|---|
-| 1 | `zadania/zadanie_1.py` | Race condition - wyścig na wspólnym liczniku |
-| 2 | `zadania/zadanie_2.py` | Synchronizacja listy i licznika jednym lockiem |
-| 3 | `zadania/zadanie_3.py` | `queue.Queue` - producer-consumer z `task_done()` i `join()` |
-| 4 | `zadania/zadanie_4.py` | Wzorzec producer-consumer z wieloma workerami |
-| 5 | `zadania/zadanie_5.py` | Graceful shutdown - sygnał `STOP` kończący workery |
-| 6 | `zadania/zadanie_6.py` | Deadlock - odtworzenie i naprawa zakleszczenia |
-| 7 | `zadania/zadanie_7.py` | `ThreadPoolExecutor` - pula wątków z `concurrent.futures` |
+| `solutions/` | Rozwiązania zadań (`ODP_zadanie_*.py`) |
+| `quiz/` | Pytania teoretyczne sprawdzające zrozumienie tematu + odpowiedzi z wyjaśnieniami |
 
 ---
 
@@ -46,6 +32,29 @@ Prezentacja liczy 27 slajdów i obejmuje następujące zagadnienia:
 | 06 | **Deadlock i antypatterns** | przyczyny zakleszczenia, naprawa i 5 typowych błędów |
 | 07 | **ThreadPoolExecutor** | `concurrent.futures`, obiekt `Future`, `submit()`, `map()` |
 | 08 | **Case study i benchmarki** | serwer TCP, porównanie wątki vs procesy vs sekwencyjnie |
+
+---
+
+## Quiz
+
+| Plik | Opis |
+|---|---|
+| `quiz/quiz_questions.md` | 5 pytań ABCD (pojedynczy i wielokrotny wybór) |
+| `quiz/quiz_answers.md` | Pytania z poprawnymi odpowiedziami i wyjaśnieniami |
+
+---
+
+## Zadania
+
+| # | Plik | Temat |
+|---|---|---|
+| 1 | `zadania/zadanie_1.py` | Race condition - wyścig na wspólnym liczniku |
+| 2 | `zadania/zadanie_2.py` | Synchronizacja listy i licznika jednym lockiem |
+| 3 | `zadania/zadanie_3.py` | `queue.Queue` - producer-consumer z `task_done()` i `join()` |
+| 4 | `zadania/zadanie_4.py` | Wzorzec producer-consumer z wieloma workerami |
+| 5 | `zadania/zadanie_5.py` | Graceful shutdown - sygnał `STOP` kończący workery |
+| 6 | `zadania/zadanie_6.py` | Deadlock - odtworzenie i naprawa zakleszczenia |
+| 7 | `zadania/zadanie_7.py` | `ThreadPoolExecutor` - pula wątków z `concurrent.futures` |
 
 ---
 
